@@ -11,8 +11,8 @@
 7. 驗證成功的話,會回傳一個jwt字串
 8. jwt字串會由.號分隔為三段,請取出中間那一段做base64 decode
 9. 可以得到像這樣的格式:  
-  {"userName":"王大頭","studNo":"學號","className":"六年一班","email":"學號@gmail.com","http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name":"學號","http://schemas.microsoft.com/ws/2008/06/identity/claims/role":"STUD","nbf":1751953767,"exp":1759902567,"iss":"STUST","aud":"STUST"}
-10. 其中 http://schemas.microsoft.com/ws/2008/06/identity/claims/role 段會有角色的資訊,學生為STUD,教職員為EMP,如果有校安人力的身分將會是一個陣列['EMP','SECURITY']
+  {"userName":"王大頭","studNo":"學號","className":"六年一班","email":"學號@gmail.com","http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name":"學號","http://schemas.microsoft.com/ws/2008/06/identity/claims/role":"STUD","extRoles":"SECURITY,EMP","nbf":1751953767,"exp":1759902567,"iss":"STUST","aud":"STUST"}
+10. 其中 extRoles 段會有角色的資訊,學生為STUD,教職員為EMP,如果有校安人力的身分將會是 SECURITY,EMP
 
 ```mermaid
 graph LR
